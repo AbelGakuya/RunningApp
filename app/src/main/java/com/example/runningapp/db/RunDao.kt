@@ -24,7 +24,7 @@ interface RunDao {
     @Query("SELECT * FROM running_table ORDER BY avgSpeedInKMH DESC")
     fun getAllRunSortedByavgSpeed() : LiveData<List<Run>>
 
-    @Query("SELECT * FROM running_table ORDER BY distanceInMetres DESC")
+    @Query("SELECT * FROM running_table ORDER BY distanceInMeters DESC")
     fun getAllRunSortedByDistance() : LiveData<List<Run>>
 
     @Query("SELECT SUM(timeInMillis) FROM running_table")
@@ -33,7 +33,7 @@ interface RunDao {
     @Query("SELECT SUM(caloriesBurned) FROM running_table")
     fun getTotalCaloriesBurned():LiveData<Long>
 
-    @Query("SELECT SUM(distanceInMetres) FROM running_table")
+    @Query("SELECT SUM(distanceInMeters) FROM running_table")
     fun getTotalDistance(): LiveData<Int>
 
     @Query("SELECT AVG(avgSpeedInKMH) FROM running_table")
