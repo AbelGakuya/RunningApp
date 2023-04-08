@@ -32,6 +32,7 @@ class SettingsFragment:Fragment(R.layout.fragment_settings) {
         val view = binding.root
 
 
+        loadFieldsFromSharedPref()
         binding.btnApplyChanges.setOnClickListener {
             val success = applyChangesToSharedPref()
             if (success){
